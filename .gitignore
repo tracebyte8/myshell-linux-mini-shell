@@ -1,0 +1,11 @@
+# Object files
+*.o
+
+# Executable
+myshell
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.out
