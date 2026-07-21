@@ -48,16 +48,13 @@ This project is still under development, and more features will be added over ti
 
 ---
 
-## Build
+## Build and run 
 
 ```bash
 make
 ```
 
 ---
-
-## Run
-
 ```bash
 ./myshell
 ```
@@ -102,8 +99,4 @@ myshell> cat < output.txt
 ## License
 
 This project is released under the **MIT License** and is intended for educational purposes.# myshell-linux-mini-shell
-# myshell-linux-mini-shell
-# myshell-linux-mini-shell
-# myshell-linux-mini-shell
-# myshell-linux_mini_shell
-# myshell-linux_mini_shell
+
