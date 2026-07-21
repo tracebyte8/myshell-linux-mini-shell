@@ -7,8 +7,10 @@ void mymkdir(char *args[]){
 
              if (mkdir(args[1],0777)==0){
                    printf("the directory are created %s ",args[1]);
+                   return ;
                }else{
                     perror("mkdir failed");
+                    return ;
                 }
     }
 

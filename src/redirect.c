@@ -20,6 +20,7 @@ void handle_redirect(char **args){
 int i =0;
  
  for (i=0;args[i]!=NULL;i++){
+    
   if (strcmp(args[i],">")==0){
  
        char file[256];

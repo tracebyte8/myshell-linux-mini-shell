@@ -58,14 +58,16 @@ int main() {
         // argc number of argumemts  
         int argc = spilt(input,args,MAX_ARGS);
         printf("Found %d arguments\n", argc);
-
+        
+        // case of user enter espace :
+        if (args[0]==NULL)continue;
+        
         // search which commands :
         execute(args);
         exit_commnd(args);
         cd_commnd(args);
         pwd_commnd(args);
         echo_commnd(args,MAX_ARGS);
-        mymkdir(args);
         mytouch(args);
         
 

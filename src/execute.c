@@ -21,12 +21,17 @@ int execute(char **args)
     /* Child process */
     if (pid == 0)
     {
-        // we put here myls : 
+        // we put here myls and mkdir : 
         if (strcmp(args[0], "ls") == 0)
            {
+                    handle_redirect(args);
+
               myls(args);
-           }
-             else{
+           }else if (strcmp(args[0], "mkdir") == 0){
+                    mymkdir(args);
+                    printf("\n");
+
+        }else{
                 
         char path[256];
         strcpy(path,find_path(args));
