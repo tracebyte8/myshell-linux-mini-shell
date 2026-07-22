@@ -90,7 +90,7 @@ myshell> cat < output.txt
 - Wildcards (`*`)
 - Command history
 - Auto-completion
-- Built-in commands (`cd`, `pwd`, `export`, `unset`, `env`)
+- Built-in commands (`pwd`, `export`, `unset`, `env`)
 - Improved parser
 - HTML/CSS project documentation
 
