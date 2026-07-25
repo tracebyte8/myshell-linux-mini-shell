@@ -38,7 +38,7 @@ This project is still under development, and more features will be added over ti
 - `cat`
 - `touch`
 - `mkdir`
-
+- `history`
 ### Redirection
 
 - `>`
