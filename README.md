@@ -45,6 +45,7 @@ This project is still under development, and more features will be added over ti
 - `>>`
 - `<`
 - `2>`
+- `|`
 
 ---
 
@@ -77,21 +78,20 @@ myshell> cat file.txt
 myshell> ls > output.txt
 
 myshell> cat < output.txt
+
+myshell> history
+
+myshell> echo hello | cat
 ```
 
 ---
 
 ## Future Work
 
-- Pipes (`|`)
 - Background execution (`&`)
-- Signal handling (`Ctrl+C`, `Ctrl+Z`)
 - Environment variables
 - Wildcards (`*`)
-- Command history
-- Auto-completion
-- Built-in commands (`pwd`, `export`, `unset`, `env`)
-- Improved parser
+- Built-in commands ( `export`, `unset`, `env`)
 - HTML/CSS project documentation
 
 ---
