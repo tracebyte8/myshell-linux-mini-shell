@@ -43,17 +43,10 @@ int main() {
         
         if (username != NULL) {
 
-            char prompt[2048];
-            char path[256];
-            getcwd(path,sizeof(path));
-
-            snprintf(prompt, sizeof(prompt),GREEN " %s"RESET "$" BLUE"%s>" RESET, path,username);
-        
-
-
-         // Read a line 
-
-        input = readline(prompt);
+                 // Read a line 
+                 signal(SIGINT,signale_handler);
+        print_prompt();
+        input = readline("");
 
         // argc number of argumemts  
         int argc = spilt(input,args,MAX_ARGS);
@@ -63,13 +56,15 @@ int main() {
         if (args[0]==NULL)continue;
         
         // search which commands :
+                 history_command(args);
+
         execute(args);
         exit_commnd(args);
         cd_commnd(args);
         pwd_commnd(args);
         echo_commnd(args,MAX_ARGS);
         mytouch(args);
-        
+        print_history(args);
 
         // print tokens :
         for (int i = 0; i < argc; i++) {

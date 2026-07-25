@@ -6,7 +6,7 @@
 void exit_commnd(char *args[]){
 if (strcmp(args[0],"exit")== 0){
     printf("bye !/n");
-    exit(0);
+    exit(EXIT_SUCCESS);
 
 }
 }

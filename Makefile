@@ -1,49 +1,66 @@
+# ======================================================
 # Compiler
+# ======================================================
 CC = gcc
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -Werror -Iinclude
-
-# Libraries
-LIBS = -lreadline
-
-# Executable name
+# ======================================================
+# Project
+# ======================================================
 NAME = myshell
 
-# Source files
-SRC =	src/myshell.c \
-		src/execute.c \
-		src/redirect.c \
-		src/builtin.c \
-		src/path.c \
-		commands/ls.c \
-		commands/cat.c \
-		commands/mkdir.c \
-		commands/touch.c
+# ======================================================
+# Sources
+# ======================================================
+SRC = \
+	src/myshell.c \
+	src/execute.c \
+	src/redirect.c \
+	src/builtin.c \
+	src/path.c \
+	src/print_prompt.c \
+	src/signals.c \
+	commands/ls.c \
+	commands/cat.c \
+	commands/mkdir.c \
+	commands/history.c \
+	commands/touch.c
 
-# Object files
+# ======================================================
+# Objects
+# ======================================================
 OBJ = $(SRC:.c=.o)
 
-# Default target
+# ======================================================
+# Compiler flags
+# ======================================================
+CFLAGS = -Wall -Wextra -Werror -Iinclude
+
+# ======================================================
+# Libraries
+# ======================================================
+LIBS = -lreadline
+
+# ======================================================
+# Rules
+# ======================================================
 all: $(NAME)
 
-# Link executable
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(LIBS)
 
-# Compile source files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Remove object files
+run: $(NAME)
+	./$(NAME)
+
 clean:
 	rm -f $(OBJ)
+	rm -f history.txt
 
-# Remove executable and object files
 fclean: clean
 	rm -f $(NAME)
 
-# Rebuild
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re

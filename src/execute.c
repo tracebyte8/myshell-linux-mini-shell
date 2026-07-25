@@ -37,6 +37,7 @@ int execute(char **args)
         strcpy(path,find_path(args));
         handle_redirect(args);
         execve(path,args,__environ);
+    
         /* Only executed if execvp() fails */
         perror(args[0]);
         exit(EXIT_FAILURE);
