@@ -12,12 +12,9 @@ int main(void)
     while (1)
     {
         signal(SIGINT, signale_handler);
-
         print_prompt();
-
         input = readline("");
-
-        /* Ctrl + D */
+    
         if (input == NULL)
         {
             printf("\nexit\n");
@@ -32,7 +29,6 @@ int main(void)
             free(input);
             continue;
         }
-
         history_command(args);
 
         int pipe_index = check_pipe(args);
