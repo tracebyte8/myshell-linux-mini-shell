@@ -45,6 +45,5 @@ int execute(char **args)
 
     /* Parent process */
     waitpid(pid, &status, 0);
-
     return (0);
 }

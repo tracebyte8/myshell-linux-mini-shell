@@ -10,8 +10,8 @@
 #include "history.h"
 #include "signals.h"
 #include "print_prompt.h"
+#include "tokeninzer.h"
+#include "execute_pipe.h"
 
 
-
-int spilt(char *line, char *args[],int max_args);
 #endif

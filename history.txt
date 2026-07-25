@@ -1,0 +1,10 @@
+ pwd 
+ ls  |  ls 
+ ls  |  ls 
+ echo  hello  |  cat 
+ ls  |  ls 
+ ls  -l  |  cat 
+ pwd 
+ echo  hello  |  cat 
+ pwd 
+ echo  hello  |  cat 

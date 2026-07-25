@@ -3,10 +3,7 @@
 
 #include "handl.h"
 
-void exit_commnd(char *args[]);
-void cd_commnd(char *args[]);
-void pwd_commnd(char *args[]);
-void echo_commnd(char *args[],int argc);
+void builtin_command(char *args[],int argc);
 
 
 

@@ -19,6 +19,8 @@ SRC = \
 	src/path.c \
 	src/print_prompt.c \
 	src/signals.c \
+	src/execute_pipe.c \
+	src/tokenizer.c \
 	commands/ls.c \
 	commands/cat.c \
 	commands/mkdir.c \

@@ -1,92 +1,57 @@
-
-
-
 #include "myshell.h"
 
-#define spc " "
 #define MAX_ARGS 256
 
-
-
-
-
-int spilt(char *line, char *args[],int max_args){
-   
-    //It stores the address of the current word.
-    char *token=strtok(line,spc);
-    int i=0;
-
-    while (token !=NULL && i<( max_args-1 )){
-    args[i++]=token;
-    token = strtok(NULL,spc);
-    }
-    args [i]=NULL;
-    return i;
-
-}
-
-
-
-
-int main() {
-
+int main(void)
+{
     char *input;
-    // create array of token :    Issues   Pull requests 100% Commits
     char *args[MAX_ARGS];
 
-    printf(" ----- mini shell -----\n");
+    printf("----- mini shell -----\n");
 
-    while (1) {
+    while (1)
+    {
+        signal(SIGINT, signale_handler);
 
-
-        char *username = getenv("USER");
-        
-        if (username != NULL) {
-
-                 // Read a line 
-                 signal(SIGINT,signale_handler);
         print_prompt();
+
         input = readline("");
 
-        // argc number of argumemts  
-        int argc = spilt(input,args,MAX_ARGS);
-        printf("Found %d arguments\n", argc);
-        
-        // case of user enter espace :
-        if (args[0]==NULL)continue;
-        
-        // search which commands :
-                 history_command(args);
-
-        execute(args);
-        exit_commnd(args);
-        cd_commnd(args);
-        pwd_commnd(args);
-        echo_commnd(args,MAX_ARGS);
-        mytouch(args);
-        print_history(args);
-
-        // print tokens :
-        for (int i = 0; i < argc; i++) {
-        printf("args[%d] = %s\n", i, args[i]);
-
-        }
-
-        // Check for EOF (e.g., Ctrl+D) or memory allocation failure
-        if (strlen (input) == 0) {
-            printf("\n exit.\n");
+        /* Ctrl + D */
+        if (input == NULL)
+        {
+            printf("\nexit\n");
             break;
         }
-            else{
-              add_history(input);
-        
-              free(input);
-                }                
-                  }
-                
-                
-                
-                
-                }
-             return 0;
+
+        int argc = spilt(input, args, MAX_ARGS);
+
+        // Empty 
+        if (args[0] == NULL)
+        {
+            free(input);
+            continue;
+        }
+
+        history_command(args);
+
+        int pipe_index = check_pipe(args);
+
+        if (pipe_index != -1)
+        {
+            execute_pipe(args, pipe_index);
+        }
+        else
+        {
+            builtin_command(args, argc);
+            execute(args);
+        }
+
+        mytouch(args);
+        print_history(args);
+        add_history(input);
+        free(input);
     }
+
+    return 0;
+}
