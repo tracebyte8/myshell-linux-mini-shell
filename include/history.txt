@@ -1,4 +1,0 @@
- ls 
- echo  history.txt 
- history 
- TF-8 

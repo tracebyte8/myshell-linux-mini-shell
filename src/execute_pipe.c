@@ -3,7 +3,6 @@
 #include "redirect.h"
 
 
-
 // pipe 
 int execute_pipe(char *args[],int index_pipe){
 
@@ -36,6 +35,7 @@ int execute_pipe(char *args[],int index_pipe){
     pid_t pid2=fork();
     // child 2:
     if (pid2==0){
+
       //close stdout
       close(fd[1]);
       // redirect stdin to  pipe read end

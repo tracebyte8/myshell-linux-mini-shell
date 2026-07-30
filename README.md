@@ -15,7 +15,6 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
 
 </p>
-## About
 
 **MyShell** is an educational Linux mini shell written in **C**.
 
@@ -38,7 +37,12 @@ This project is still under development, and more features will be added over ti
 - `cat`
 - `touch`
 - `mkdir`
+<<<<<<< HEAD
 - `history`
+=======
+- ` ./ ( run process )`
+
+>>>>>>> a4b8d08 (add (./) run process in your shell)
 ### Redirection
 
 - `>`
@@ -81,9 +85,12 @@ myshell> cat < output.txt
 
 myshell> history
 
+
 myshell> echo hello | cat
 ```
-
+---
+ ### **About** myshell> ./test.c
+- before you run the shell , compile your file you want to run , like test.c in terminal after that you can use `./test.c` , it should be in current directory .
 ---
 
 ## Future Work

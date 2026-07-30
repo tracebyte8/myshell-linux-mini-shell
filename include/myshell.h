@@ -12,6 +12,7 @@
 #include "print_prompt.h"
 #include "tokeninzer.h"
 #include "execute_pipe.h"
+#include "run.h"
 
 
 #endif

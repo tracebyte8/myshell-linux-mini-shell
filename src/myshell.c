@@ -22,7 +22,7 @@ int main(void)
         }
 
         int argc = spilt(input, args, MAX_ARGS);
-
+        
         // Empty 
         if (args[0] == NULL)
         {
@@ -30,6 +30,7 @@ int main(void)
             continue;
         }
         history_command(args);
+
 
         int pipe_index = check_pipe(args);
 
@@ -39,6 +40,9 @@ int main(void)
         }
         else
         {
+            if(run_process(args)==1){
+              continue;  
+            } 
             builtin_command(args, argc);
             execute(args);
         }
