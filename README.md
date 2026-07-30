@@ -40,7 +40,6 @@ This project is still under development, and more features will be added over ti
 - `history`
 - ` ./ ` ( run process )
 
->>>>>>> a4b8d08 (add (./) run process in your shell)
 ### Redirection
 
 - `>`
