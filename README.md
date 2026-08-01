@@ -70,6 +70,10 @@ myshell> ls
 
 myshell> ls -l
 
+myshell> ls file
+
+myshell> ls -l file
+
 myshell> touch file.txt
 
 myshell> mkdir project
